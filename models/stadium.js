@@ -2,7 +2,7 @@ import connection from "../config/orm.js";
 import Sequelize from "sequelize";
 
 const stadium = connection.define('stadium', {
-    idstadim: {
+    idstadium: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,

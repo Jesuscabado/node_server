@@ -1,6 +1,6 @@
 import { Router } from "express";
-import isAuthorized from "../middlewares/auth.js";
-import playerController from "../controllers/playerController.js";
+import isAuthorized from "../../middlewares/auth.js";
+import playerController from "../../controllers/player/playerViewController.js";
 const router = Router();
 
 router.get("/", (req, res) => {

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import isAuthorized from "../middlewares/auth.js";
-import stadiumController from "../controllers/stadiumController.js";
+import isAuthorized from "../../middlewares/auth.js";
+import stadiumController from "../../controllers/stadium/stadiumAPIController.js";
 const router = Router();
 
 router.get("/", (req, res) => {

@@ -1,12 +1,17 @@
 import express from "express";
-import router from "./routes/router.js";
+import routerAPI from "./routes/api/router.js";
+import routerView from "./routes/views/router.js"
 
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", router);
+app.set('view engine', 'pug');  
 
+
+app.use("/api/", routerAPI);
+app.use("/api/", routerView);
 app.listen(3000, () => {
     console.log("server is running on port 3000");
 });

@@ -3,7 +3,7 @@ import Sequelize from "sequelize";
 import Stadium from "./stadium.js";
 import Tournament from "./tournament.js";
 const Game = connection.define('game', {
-    idsgame: {
+    idgame: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
