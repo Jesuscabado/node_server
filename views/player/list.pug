@@ -1,6 +1,7 @@
 extends ../layout 
 
 block content 
+    link(rel="stylesheet", href="/style.css")
     h1 Jugadores 
 
     table 
@@ -19,3 +20,11 @@ block content
                         td=player.team.name 
                     else 
                         td Sin Equipo
+                    td
+                        form(action=`/players/player/delete${player.idplayer}`, method="post")
+                            input(type="hidden", name="password", value="mi-contraseña")
+                            input(type="submit", value="Eliminar")
+
+    br
+    a(href="/players/new") 
+        button Crear un jugador

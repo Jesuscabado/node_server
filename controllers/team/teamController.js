@@ -2,7 +2,7 @@ import Team from "../../models/team.js";
 import Player from "../../models/player.js";
 import stadium from "../../models/stadium.js";
 
-const getAll =  async (req,res) => {
+const getAll =  async () => {
     try{
         let teams = await Team.findAll({
             attributes: ['idteam', 'name', 'creation_date'],
@@ -10,7 +10,7 @@ const getAll =  async (req,res) => {
                 {
                 model: Player,
                 attributes:['idplayer', 'name', 'last_name', 'age'],
-                as: 'player'
+                as: 'players'
                 } ,
                 {
                     model: stadium,
@@ -25,7 +25,7 @@ const getAll =  async (req,res) => {
   }
 };
 
-const getById = async (req, res) => {
+const getById = async (id) => {
     try {
         let team = await Team.findByPk(id,{
             attributes: ['idteam', 'name', 'creation_date'],
@@ -33,8 +33,8 @@ const getById = async (req, res) => {
                 {
                 model: Player,
                 attributes:['idplayer', 'name', 'last_name', 'age'],
-                as: 'player'
-                } ,
+                as: 'players'
+                },
                 {
                     model: stadium,
                     attributes:['idstadium', 'name', 'capacity'],
@@ -50,7 +50,7 @@ const getById = async (req, res) => {
 
   const create = async (data) => {
     try {
-      let team = await Team.create(data);
+      let team = await Team.create(data);// en las constantes crear update y borrar obtenemos un resultado numerico seria ideal cambiarlo por let results
       return [0, team];
     } catch (error) {
       return [1, error];

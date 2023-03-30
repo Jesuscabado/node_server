@@ -67,7 +67,7 @@ const update = async (data, idplayer) => {
   }
 };
 
-const deletes = async (idplayer) => {
+const borrar = async (idplayer) => {
   try {
     let player = await Player.destroy({
       where: {
@@ -85,5 +85,5 @@ export default {
   getById,
   create,
   update,
-  deletes,
+  borrar,
 };
