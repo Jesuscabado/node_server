@@ -73,9 +73,9 @@ const update = async (req, res) => {
   }
 };
 
-const deletes = async (req, res) => {
+const borrar = async (req, res) => {
   let idplayer = req.params.id;
-  let result = await playerController.deletes(idplayer);
+  let result = await playerController.borrar(idplayer);
   if (result === 0) {
     if (result[1] === 0) {
       res.status(404).send({
@@ -97,5 +97,5 @@ export default {
   getById,
   create,
   update,
-  deletes,
+  borrar,
 };

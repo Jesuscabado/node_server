@@ -1,7 +1,6 @@
 import express from "express";
 import routerAPI from "./routes/api/router.js";
-import routerView from "./routes/views/router.js"
-
+import routerView from "./routes/views/router.js";
 const app = express();
 
 app.use(express.json());

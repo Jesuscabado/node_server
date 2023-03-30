@@ -1,4 +1,7 @@
 import teamController from "./teamController.js";
+/* import Team from "../../models/team.js";
+import Player from "../../models/player.js";
+import stadium from "../../models/stadium.js"; */
 
 const getAll =  async (req,res) => {
     let result = await teamController.getAll();
@@ -31,7 +34,17 @@ const getById = async (req, res) => {
       });
     }
   };
-const create = async (req, res) => {
+
+  /*¿¿hay que crear esta funcion en teams??
+   const createForm = async (req,res) => {
+    let teams = await Team.findAll({
+      attributes: ['idteam', 'name', 'creation_date']
+      
+  });
+    res.render("player/new",{teams:teams});
+  } */
+
+  const create = async (req, res) => {
     let data = {
         name: req.body.name,
         idcaptain: req.body.idcaptain,
@@ -87,7 +100,6 @@ const borrar = async (req,res) => {
     });
   }
 };
-
 
 export default {
     getAll,

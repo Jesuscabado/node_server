@@ -1,0 +1,15 @@
+extends ../layout 
+
+block content 
+    h1 teams
+
+    table 
+        thead 
+            th Nombre 
+           
+        thbody
+            each team in teams 
+                tr 
+                    td=team. name
+                    
+                    
