@@ -1,9 +1,8 @@
 extends ../layout 
 
 block content 
-    link(rel="stylesheet", href="/style.css")
-    h1 Jugadores 
-
+    link(rel="stylesheet", href="/css/style.css")
+    h1 Jugadores
     table 
         thead 
             th Nombre 
@@ -13,17 +12,24 @@ block content
         thbody
             each player in players 
                 tr 
-                    td=player. name
+                    td
+                      a(href=`/players/player/${player.idplayer}`)=player.name
                     td=player.last_name 
                     td=player.age 
                     if player.team 
                         td=player.team.name 
                     else 
                         td Sin Equipo
+                
                     td
-                        form(action=`/players/player/delete${player.idplayer}`, method="post")
+                        form(action=`/players/delete/${player.idplayer}`, method="post")
                             input(type="hidden", name="password", value="mi-contraseña")
-                            input(type="submit", value="Eliminar")
+                            input(type="submit", class="btn", value="Eliminar")
+                        
+                        form(action=`/players/edit/${player.idplayer}`, method="get")
+                            input(type="hidden", name="password", value="mi-contraseña")
+                            input(type="submit", class="btn edit", value="Editar")
+
 
     br
     a(href="/players/new") 

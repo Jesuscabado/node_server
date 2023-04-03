@@ -1,5 +1,5 @@
 import { Router } from "express";
-import isAuthorized from "../../middlewares/auth.js";
+import {isAuthorized} from "../../middlewares/auth.js";
 import tournamentController from "../../controllers/tournament/tournamentAPIController.js";
 
 const router = Router();

@@ -4,7 +4,42 @@ body {
     width: 350px;
     text-align: center;
     border-collapse: collapse;
+    margin-left: 40%;
 }
+
+ td,  th {
+    border: 1px solid #555555;
+    padding: 5px 2px;
+  }
+  tbody td {
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+   tr:nth-child(even) {
+    background: #CC3BFC;
+  }
+   thead {
+    background: #792396;
+    border-bottom: 4px solid #792396;
+  }
+  thead th {
+    font-size: 19px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 2px solid #792396;
+  }
+  thead th:first-child {
+    border-left: none;
+  }
+  
+ 
+  td {
+    font-size: 13px;
+  }
+
+  
 /* 
 table.purpleHorizon {
     border: 4px solid #792396;

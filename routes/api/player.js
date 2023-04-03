@@ -1,5 +1,5 @@
 import { Router } from "express";
-import isAuthorized from "../../middlewares/auth.js";
+import {isAuthorized} from "../../middlewares/auth.js";
 import playerController from "../../controllers/player/playerAPIController.js";
 const router = Router();
 
